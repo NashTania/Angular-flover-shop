@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "https://fe.it-academy.by/AjaxStringStorage2.php",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

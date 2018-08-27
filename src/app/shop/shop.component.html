@@ -1,0 +1,38 @@
+<p class="header">
+  Магазин
+</p>
+
+<div id='content'>
+  <div class='filter'>
+    <p class='heading'>
+      Фильтр
+    </p>
+    <!--[ngModel]='checkType' -->
+      <input type="checkbox" #bouquet value="bouquet" [ngModel]='false' (change)='checkType($event, bouquet)'/>
+      <label for='bouquet' ><span>букеты</span></label><br />
+
+      <input type="checkbox" value="wedding" #wedding [ngModel]='false' (change)='checkType($event, wedding)'/>
+      <label for='wedding' ><span>букеты для невест</span></label><br />
+
+      <input type="checkbox" #box value="box" [ngModel]='false' (change)='checkType($event, box)'/>
+      <label for='box'><span>букеты в коробке</span></label><br />
+
+      <input type="checkbox" #decor value="decor" [ngModel]='false' (change)='checkType($event, decor)'/>
+      <label for='decor'><span>цветочный декор</span></label>
+  </div>
+
+  <div class='flex-container' id='flex-container'>
+    <div *ngFor='let product of products | filter: selectedTypes' class='card-popular'>
+      <a routerLink="/detail/{{product.id}}">
+      <img src='assets/images/{{product.src}}' />
+      </a>
+      <p class='product-name'>
+        {{product.name}}
+      </p>
+      <p class='price-popular'>
+        {{product.price}} руб.
+      </p>
+      <button class='popular-buy' (click) = 'addProductToCart(product)'>Купить</button>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<p class="header">
+  Корзина
+</p>
+
+<div class="flex-box">
+  <div class="flex-column" id='cart-container'>
+    <div *ngFor='let product of cartProducts' class='flex-row' id='cart-id'>
+      <div class="flex-1">
+        <img src='assets/images/{{product.src}}' />
+      </div>
+      <div class="flex-2">
+        <p class='product-name'>
+          {{product.name}}
+        </p>
+      </div>
+      <div class="flex-3">
+        <p class='price-popular'>
+          {{product.price}} руб.
+        </p>
+      </div>
+      <div class='flex-3'>
+        <button class='popular-buy' (click)='removeProduct(product)' >Удалить</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="total">
+  <p id="total">
+    Итого: {{totalSum}}
+  </p>
+  <label for="order-button"></label>
+  <input id="order-button" type="button"  value="Заказать" class="popular-buy " />
+</div>

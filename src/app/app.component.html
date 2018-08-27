@@ -1,0 +1,61 @@
+<div class='main'>
+  <div class='menu-block'>
+    <div class='menu-full'>
+      <a routerLink='/about' >О нас</a>
+      <a routerLink='/gallery'>Галерея</a>
+    </div>
+    <div>
+    <a routerLinc='/main' href='index.html'>  <img id='img-logo' src='assets/images/logo.png' /></a>
+    </div>
+    <div class='menu-full'>
+      <a routerLink='/shop'>Магазин</a>
+      <a routerLink='/cart'>Корзина</a>
+    </div>
+
+    <div class='mobile-menu'>
+      <input id='hamburger' class='hamburger' type="checkbox" />
+      <label for='hamburger' class='hamburger'>
+        <i></i>
+
+      </label>
+
+      <ul class='menu-list'>
+
+        <li>
+          <a routerLink='/about'>О нас</a>
+        </li>
+        <li>
+          <a routerLink='/gallery'>Галерея</a>
+        </li>
+        <li>
+          <a routerLink='/shop'>Магазин</a>
+        </li>
+        <li>
+          <a routerLink='/cart'>Корзина</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+
+
+<footer>
+  <div class="contacts">
+    <p>
+      г. Минск, ул. Корш-Саблина д.5
+    </p>
+    <p>
+      +375 17 241-10-91 <br />
+       +375 44 517-05-02
+    </p>
+
+    <div class="social-icons">
+      <a class="a-icons" href="#"><img src="assets/images/facebook.png" /></a>
+      <a class="a-icons" href="#"><img src="assets/images/twitter.png" /></a>
+      <a class="a-icons" href="#"><img src="assets/images/instagram.png" /></a>
+    </div>
+  </div>
+</footer>
+</div>

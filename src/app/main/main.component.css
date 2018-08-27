@@ -1,0 +1,177 @@
+@keyframes slidy {
+  0% {
+    left: 0;
+  }
+  30% {
+    left: 0;
+  }
+  35% {
+    left: -100%;
+  }
+  65% {
+    left: -100%;
+  }
+  70% {
+    left: -200%;
+  }
+  95% {
+    left: -200%;
+  }
+  100% {
+    left: -300%;
+  }
+}
+
+#header-slider {
+  background-image: url("/assets/images/header1.jpg");
+  max-width: 1200px;
+  height: 100%;
+}
+
+body figure {
+  margin: 0;
+}
+
+div#header-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  position: relative;
+  width: 450%;
+  animation: 30s slidy infinite;
+}
+
+.slider figure {
+  width: 20%;
+  height: auto;
+  display: inline-block;
+  position: inherit;
+  z-index: 0;
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+}
+
+.slider figure figcaption {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  font-family: "Lobster", cursive;
+  font-size: 2.5em;
+  font-weight: 400;
+  color: #161616;
+}
+
+.greeting {
+  padding-top: 2rem;
+  background: #e8e8e8;
+  padding-bottom: 6rem;
+}
+
+.greeting a {
+  padding-left: 1.5rem;
+  text-decoration: none;
+  color: #161616;
+  padding-top: 1.5rem;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 600;
+}
+
+.greeting .basic-text-center {
+  font-family: "PT Sans", sans-serif;
+  text-align: center;
+  color: #7f7e7f;
+}
+
+.greeting .greeting-img {
+  display: none;
+}
+
+.header-small {
+  font-family: "Lobster", cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #ea7cbc;
+  padding-top: 4rem;
+}
+
+.flex-container {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.flex-container img {
+  max-width: 300px;
+}
+
+.flex-container .product-name {
+  font-family: "PT Sans", sans-serif;
+  color: #494949;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.flex-container .price-popular {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 0;
+}
+
+.flex-container .card-popular {
+  padding-bottom: 2rem;
+}
+
+.flex-container .card-popular button {
+  background-color: #ea7cbc;
+  width: 8.5rem;
+  height: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  font-family: "PT Sans", sans-serif;
+  color: #ffffff;
+  font-size: 1rem;
+  margin: auto auto auto 5rem;
+}
+
+@media (min-width: 599px) {
+  figure.slider figure figcaption {
+    position: absolute;
+    top: 5em;
+    left: 2em;
+    font-family: "Lobster", cursive;
+    font-size: 3em;
+    font-weight: 400;
+    color: #161616;
+  }
+}
+  @media (min-width: 899px) {
+    .greeting {
+      display: inline-block;
+      padding-top: 5em;
+      padding-left: 2em;
+    }
+    .greeting .greeting-text {
+      display: inline-block;
+      max-width: 40%;
+    }
+    .greeting .greeting-img {
+      display: inline-block;
+      max-width: 50%;
+      padding-left: 5rem;
+      float: right;
+    }
+    .greeting .greeting-img img {
+      max-width: 90%;
+    }
+  }  /*# sourceMappingURL=styles.css.map */

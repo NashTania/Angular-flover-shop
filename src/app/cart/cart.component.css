@@ -1,0 +1,200 @@
+
+body {
+  background: #f4f4f4; }
+
+.main {
+  max-width: 1000px;
+  background: #FFFFFF;
+  margin: auto; }
+
+.header-small {
+  font-family: "Lobster", cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #ea7cbc;
+  padding-top: 4rem; }
+
+.flex-container {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 2rem;
+  padding-bottom: 3rem; }
+  .flex-container img {
+    max-width: 300px; }
+  .flex-container .product-name {
+    font-family: "PT Sans", sans-serif;
+    color: #494949;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 0.5rem; }
+  .flex-container .price-popular {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 0; }
+  .flex-container .card-popular {
+    padding-bottom: 2rem;
+  }
+    .popular-buy {
+      background-color: #ea7cbc;
+      width: 8.5rem;
+      height: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      font-family: "PT Sans", sans-serif;
+      color: #ffffff;
+      font-size: 1rem;
+      margin: auto auto auto 5rem; }
+
+      #order-button{
+        margin-bottom: 3em;
+        margin-top: 2em;
+        margin-left: 40%;
+        width: 12em;
+        height: 2.5em;
+      }
+
+.contacts {
+  background: #ea7cbc;
+  padding-top: 3rem;
+  padding-left: 2rem;
+  color: #ffffff; }
+  .contacts .social-icons {
+    margin: auto;
+    padding-bottom: 3rem; }
+
+.heading {
+  font-family: "Lobster", cursive;
+  font-size: 1.5rem;
+  margin: auto;
+  text-align: center;
+  padding-top: 1.5rem; }
+
+.header {
+  color: #ea7cbc;
+  font-family: "Lobster", cursive;
+  text-align: center;
+  font-size: 3rem;
+  padding-top: 5rem;
+  padding-bottom: 3rem; }
+
+.filter {
+  padding-left: 1rem; }
+  .filter input {
+    padding-top: 1.5rem; }
+    .filter input span {
+      list-style: none;
+      font-family: "PT Sans", sans-serif;
+      color: #161616;
+      padding-bottom: 1rem; }
+
+.flex-column {
+  flex-direction: column; }
+
+.flex-row {
+  flex-direction: row;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-left: 3rem; }
+  .flex-row .flex-1 {
+    width: 30%; }
+    .flex-row .flex-1 img {
+      max-width: 100%; }
+  .flex-row .flex-2 {
+    padding-left: 3rem; }
+    .flex-row .flex-2 p {
+      font-family: "PT Sans", sans-serif;
+      color: #494949;
+      font-size: 1.3rem; }
+  .flex-row .flex-3 {
+    padding-left: 3rem; }
+    .flex-row .flex-3 p {
+      font-family: "PT Sans", sans-serif;
+      font-weight: 600;
+      font-size: 1.5rem; }
+
+.total {
+  padding-left: 3rem; }
+  .total p {
+    font-family: "Lobster", cursive;
+    font-size: 2em;
+    font-weight: 400;
+    color: #161616; }
+
+@media (min-width: 599px) {
+  figure.slider figure figcaption {
+    position: absolute;
+    top: 5em;
+    left: 2em;
+    font-family: "Lobster", cursive;
+    font-size: 3em;
+    font-weight: 400;
+    color: #161616; }
+
+  #img-logo {
+    max-width: 100%; } }
+@media (min-width: 899px) {
+  .menu-block {
+    width: 100%;
+    margin: auto;
+    display: inline-block;
+    margin: auto;
+    padding-left: 15%; }
+
+  .mobile-menu {
+    display: none; }
+
+  .menu-full {
+    display: block;
+    float: left;
+    padding: 20px;
+    text-align: right;
+    padding-top: 6em; }
+    .menu-full a {
+      padding-left: 1em;
+      padding-right: 1em;
+      margin: auto;
+      font-family: "PT Sans", sans-serif;
+      font-size: 1.3em;
+      font-weight: 300;
+      text-decoration: none; }
+
+  #img-logo {
+    display: block;
+    float: left;
+    padding: 20px;
+    text-align: right; }
+
+  .greeting {
+    display: inline-block;
+    padding-top: 5em;
+    padding-left: 2em; }
+    .greeting .greeting-text {
+      display: inline-block;
+      max-width: 40%; }
+    .greeting .greeting-img {
+      display: inline-block;
+      max-width: 50%;
+      padding-left: 5rem;
+      float: right; }
+      .greeting .greeting-img img {
+        max-width: 90%; }
+
+  .filter {
+    float: left;
+    width: 20%;
+    padding-left: 1rem; }
+    .filter input {
+      padding-top: 1.5rem; }
+      .filter input span {
+        list-style: none;
+        font-family: "PT Sans", sans-serif;
+        color: #161616;
+        padding-bottom: 1rem; } }
+
+/*# sourceMappingURL=styles.css.map */

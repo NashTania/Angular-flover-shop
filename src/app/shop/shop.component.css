@@ -1,0 +1,107 @@
+.flex-container {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.flex-container img {
+  max-width: 300px;
+}
+
+.flex-container .product-name {
+  font-family: "PT Sans", sans-serif;
+  color: #494949;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.flex-container .price-popular {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 0;
+}
+
+.flex-container .card-popular {
+  padding-bottom: 2rem;
+}
+
+.flex-container .card-popular button {
+  background-color: #ea7cbc;
+  width: 8.5rem;
+  height: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  font-family: "PT Sans", sans-serif;
+  color: #ffffff;
+  font-size: 1rem;
+  margin: auto auto auto 5rem;
+}
+
+.contacts {
+  background: #ea7cbc;
+  padding-top: 3rem;
+  padding-left: 2rem;
+  color: #ffffff;
+}
+
+.contacts .social-icons {
+  margin: auto;
+  padding-bottom: 3rem;
+}
+
+.heading {
+  font-family: "Lobster", cursive;
+  font-size: 1.5rem;
+  margin: auto;
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+.header {
+  color: #ea7cbc;
+  font-family: "Lobster", cursive;
+  text-align: center;
+  font-size: 3rem;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+} 
+
+.filter {
+  padding-left: 1rem;
+}
+
+.filter input {
+  padding-top: 1.5rem;
+}
+
+.filter input span {
+  list-style: none;
+  font-family: "PT Sans", sans-serif;
+  color: #161616;
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 899px) {
+  .filter {
+    float: left;
+    width: 20%;
+    padding-left: 1rem;
+  }
+  .filter input {
+    padding-top: 1.5rem;
+  }
+  .filter input span {
+    list-style: none;
+    font-family: "PT Sans", sans-serif;
+    color: #161616;
+    padding-bottom: 1rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
