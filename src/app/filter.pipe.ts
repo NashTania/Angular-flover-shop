@@ -12,11 +12,17 @@ export class FilterPipe implements PipeTransform {
   ) { }
 
   transform(products, value) {
-    if (value.length === 0) {
+    let types = [];
+    for (let key in value) {
+      if (value[key] === true) {
+        types.push(key)
+      }
+    }
+    if (types.length === 0) {
       return products;
     }
     else {
-      return products.filter(product => value.indexOf(product.type) != -1)
+      return products.filter(product => types.indexOf(product.type) != -1)
     }
   }
 }

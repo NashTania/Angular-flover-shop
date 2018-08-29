@@ -6,9 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Headers, RequestOptions, RequestMethod } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import { CartService } from '../cart/cart.service',
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { CartService } from '../cart/cart.service';
+import { FormGroup, FormControl, FormBuilder, NgForm } from '@angular/forms';
 import { FilterPipe } from '../filter.pipe'
+import { ChangeDetectorRef } from '@angular/core'
 
 @Component({
   selector: 'app-shop',
@@ -21,6 +22,7 @@ export class ShopComponent implements OnInit {
     forBirds: false
   }
   private userId: string
+
   public productJSON = {
     "id": 'number',
     "name": 'string',
@@ -30,10 +32,24 @@ export class ShopComponent implements OnInit {
   }
   public selectedTypes = [];
 
+  public type = {
+    'bouquet': '',
+    'wedding': '',
+    'box': '',
+    'decor': ''
+  }
+
+  typesForm = new FormGroup({
+    bouquet: new FormControl(),
+    wedding: new FormControl(),
+    box: new FormControl(),
+    decor: new FormControl()
+  })
 
   constructor(
     private shopService: ShopService,
     private cartService: CartService,
+    private cdr: ChangeDetectorRef
   ) { }
 
   ngOnInit() {
@@ -55,37 +71,13 @@ export class ShopComponent implements OnInit {
       })
   }
 
-  filterProducts() {
-    if (this.selectedTypes.length === 0) {
-      return this.products
+  addType(event) {
+      this.type = {
+      bouquet: this.typesForm.get('bouquet').value,
+      wedding: this.typesForm.get('wedding').value,
+      box: this.typesForm.get('box').value,
+      decor: this.typesForm.get('decor').value
     }
-    else {
-      let result = []
-      for (let g = 0; g < this.products.length; g++) {
-        for (let i = 0; i < this.selectedTypes.length; i++) {
-          if (this.products[g].type === this.selectedTypes[i]) {
-            result.push(this.products[g])
-          }
-        }
-      }
-      console.log(result)
-      return this.products === result
-    }
-  }
-
-
-  checkType(event, element: HTMLInputElement): void {
-    if (event.target.checked) {
-      this.selectedTypes.push(element.value)
-      //this.filterProducts()
-    }
-    else if (!event.target.checked) {
-      this.selectedTypes = this.selectedTypes.filter(type => type != element.value)
-      //this.filterProducts()
-
-    }
-    console.log(this.selectedTypes)
-    return this.selectedTypes
   }
 
   getSelectedTypes() {

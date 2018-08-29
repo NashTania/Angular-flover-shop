@@ -33,17 +33,15 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
     this.product = new Product()
     this.addProductForm = new FormGroup({
-      'name': new FormControl(this.product.name,[
+      'name': new FormControl(this.product.name, [
         Validators.required,
         Validators.minLength(4)
-      ])
-      'id': new FormControl(this.product.id)
-      'type': new FormControl(this.product.type,
-        Validators.required
-      )
+      ]),
+      'id': new FormControl(this.product.id),
+      'type': new FormControl(this.product.type, Validators.required),
       'src': new FormControl(this.product.src,
         Validators.required
-      )
+      ),
       'price': new FormControl(this.product.price,
         Validators.required
       )
@@ -73,13 +71,11 @@ export class AddProductComponent implements OnInit {
   onSubmit() {
     this.shopService.getProduct().toPromise()
       .then((data) => {
-      this.products = JSON.parse(data.result);
-      this.products.push(this.addProductForm.value);
-      console.log(this.products);
-      //this.cartService.setServerData('tatiana_tkachenko_FD2_flover_shop_products', this.products)
-      alert('товар добавлен')
-      this.addProductForm.reset()
-    })
+        this.products = JSON.parse(data.result);
+        this.products.push(this.addProductForm.value);
+        alert('товар добавлен')
+        this.addProductForm.reset()
+      })
   }
 
 }

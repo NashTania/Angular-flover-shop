@@ -18,7 +18,7 @@ export class CartService {
   public httpOptions = new RequestOptions({
     method: 'POST'
   });
-  //public body = new URLSearchParams();
+
   public options = {
     headers: {
       'Content-type': 'application/x-www-form-urlencoded'
@@ -29,10 +29,10 @@ export class CartService {
   public product: Product;
   public productJSON = {
     "id": 'number',
-    "name":'string',
-    "type":'string',
-    "src":'string',
-    "price":'number'
+    "name": 'string',
+    "type": 'string',
+    "src": 'string',
+    "price": 'number'
   }
 
 
@@ -49,14 +49,14 @@ export class CartService {
     return this.http.post<Product>(this.productUrl, bodyRead.toString(), this.options)
   }
 
-  loadCartProducts(){
-     return this.getCartProducts().toPromise()
+  loadCartProducts() {
+    return this.getCartProducts().toPromise()
       .then(data => {
-        if(data.result){
+        if (data.result) {
           console.log(data)
           return this.cartProducts = JSON.parse(data.result)
         }
-    })
+      })
   }
 
   setServerData(key, value) {
@@ -75,7 +75,7 @@ export class CartService {
               bodyUpdate.set('p', '111');
               bodyUpdate.set('v', JSON.stringify(value));
               this.http.post<Product>(this.productUrl, bodyUpdate.toString(), this.options)
-              .toPromise()
+                .toPromise()
             });
         } else {
           let bodyInsert = new URLSearchParams();
@@ -83,10 +83,10 @@ export class CartService {
           bodyInsert.set('n', key);
           bodyInsert.set('v', JSON.stringify(value));
           this.http.post<Product>(this.productUrl, bodyInsert.toString(), this.options)
-          .toPromise()
+            .toPromise()
         }
       }
-    )
+      )
   }
 
   makeId() {

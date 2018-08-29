@@ -31,10 +31,10 @@ export class ShopService {
   public product: Product;
   private productJSON = {
     "id": 'number',
-    "name":'string',
-    "type":'string',
-    "src":'string',
-    "price":'number'
+    "name": 'string',
+    "type": 'string',
+    "src": 'string',
+    "price": 'number'
   }
 
   constructor(private http: HttpClient) { }

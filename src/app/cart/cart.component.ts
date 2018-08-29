@@ -41,7 +41,6 @@ export class CartComponent implements OnInit {
         break;
       }
     }
-    console.log(this.cartProducts)
     this.cartService.setServerData('tatiana_tkachenko_FD2_flover_cart_products_' + userId, this.cartProducts)
   }
 }
