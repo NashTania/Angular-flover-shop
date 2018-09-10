@@ -16,7 +16,7 @@ export class CartService {
     }
   };
   private _cartProducts: Product[];
-  public userId: string = this.getUserId();;
+  public userId: string = this.getUserId();
   private product: Product;
   private _dataPromise: Promise<CartService>;
   private _data: Product[];
@@ -30,13 +30,13 @@ export class CartService {
     const body = new URLSearchParams();
     body.set('f', 'READ');
     body.set('n', 'tatiana_tkachenko_FD2_flover_cart_products_' + this.userId);
-    if(this._dataPromise === undefined) {
+    if (this._dataPromise === undefined) {
      return this._dataPromise = this.http.post<Product>(this.productUrl, body.toString(), this.options).toPromise()
         .then((data, error) => {
         return this._data = JSON.parse(data.result);
-      })
+      });
     }
-    return this._dataPromise
+    return this._dataPromise;
   }
 
   setServerData(value) {
@@ -91,6 +91,6 @@ export class CartService {
   }
 
   getData() {
-    return this._data
+    return this._data;
   }
 }

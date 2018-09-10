@@ -17,7 +17,7 @@ export class ShopComponent implements OnInit {
 
   private _userId: string;
 
-  public selectedTypes = []
+  public selectedTypes = [];
 
   private _type = {
     'bouquet': '',
@@ -40,12 +40,12 @@ export class ShopComponent implements OnInit {
 
   ngOnInit() {
     this.shopService.loadDataProducts()
-      .then(data => this.products = data)
+      .then(data => this.products = data);
   }
 
 
   addProductToCart(item: Product) {
-    let value = this.cartService.getData()
+    const value = this.cartService.getData();
       if (value === undefined) {
         this.cartService.loadData()
           .then((value) => {

@@ -20,7 +20,7 @@ export class ShopService {
     }
   };
   private _data: Product[];
-  private _dataPromise: Promise<ShopService>
+  private _dataPromise: Promise<ShopService>;
 
   constructor(private http: HttpClient) { }
 
@@ -32,26 +32,26 @@ export class ShopService {
       this.http.post<Product[]>(this.productUrl, this.body.toString(), this.options)
         .toPromise().then((data, error) => {
           return this._data = JSON.parse(data.result);
-      })
+      });
     }
-    return this._dataPromise
+    return this._dataPromise;
   }
 
   loadList() {
     this.body.set('f', 'READ');
     this.body.set('n', 'tatiana_tkachenko_FD2_flover_shop_products');
-    return this.http.post<Product[]>(this.productUrl, this.body.toString(), this.options)
+    return this.http.post<Product[]>(this.productUrl, this.body.toString(), this.options);
   }
 
   getProductById(id) {
       return this.loadDataProducts()
       .then(_ => {
-        return this._data.find(object => object.id === id)
+        return this._data.find(object => object.id === id);
       });
   }
 
   getData() {
-    return this._data
+    return this._data;
   }
 
   addData(data) {

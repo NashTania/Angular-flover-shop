@@ -19,22 +19,22 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     this.cartService.loadData()
       .then((data) => this.cartProducts = data)
-      .then(_ => this.totalSum = this.getTotalCost()
+      .then(_ => this.totalSum = this.getTotalCost());
   }
 
 
   getTotalCost() {
-    let totalSum = this.cartProducts.reduce(function(sum, current){
-      return sum + current.price
-    }, 0)
+    const totalSum = this.cartProducts.reduce(function(sum, current) {
+      return sum + current.price;
+    }, 0);
     return totalSum;
   }
 
   removeProduct(item: Product) {
-    this.cartProducts = this.cartProducts.filter(function(product){
-      return product.id !== item.id
-    })
+    this.cartProducts = this.cartProducts.filter(function(product) {
+      return product.id !== item.id;
+    });
     this.cartService.setServerData(this.cartProducts);
-    this.totalSum = this.getTotalCost()
+    this.totalSum = this.getTotalCost();
   }
 }
