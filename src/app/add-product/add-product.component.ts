@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CartService } from '../cart/cart.service';
-import { ShopService } from '../shop/shop.service'
+import { ShopService } from '../shop/shop.service';
 
 @Component({
   selector: 'app-add-product',
@@ -11,7 +11,7 @@ import { ShopService } from '../shop/shop.service'
 })
 export class AddProductComponent implements OnInit {
 
-  typeProduct = ['Выберите категорию', 'bouquet', 'wedding', 'box', 'decor']
+  typeProduct = ['Выберите категорию', 'bouquet', 'wedding', 'box', 'decor'];
 
   addProductForm = new FormGroup({
     name: new FormControl(''),
@@ -21,9 +21,9 @@ export class AddProductComponent implements OnInit {
     price: new FormControl(''),
   });
 
-  public products: []
+  public products: Product[];
 
-  private product: Product
+  private product = new Product();
 
   constructor(
     private cartService: CartService,
@@ -31,7 +31,6 @@ export class AddProductComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.product = new Product()
     this.addProductForm = new FormGroup({
       'name': new FormControl(this.product.name, [
         Validators.required,
@@ -45,7 +44,7 @@ export class AddProductComponent implements OnInit {
       'price': new FormControl(this.product.price,
         Validators.required
       )
-    })
+    });
   }
 
   get name() {
@@ -57,15 +56,15 @@ export class AddProductComponent implements OnInit {
   }
 
   get type() {
-    return this.addProductForm.get('type')
+    return this.addProductForm.get('type');
   }
 
   get src() {
-    return this.addProductForm.get('src')
+    return this.addProductForm.get('src');
   }
 
   get price() {
-    return this.addProductForm.get('price')
+    return this.addProductForm.get('price');
   }
 
   onSubmit() {
@@ -73,9 +72,9 @@ export class AddProductComponent implements OnInit {
       .then((data) => {
         this.products = JSON.parse(data.result);
         this.products.push(this.addProductForm.value);
-        alert('товар добавлен')
-        this.addProductForm.reset()
-      })
+        alert('товар добавлен');
+        this.addProductForm.reset();
+      });
   }
 
 }

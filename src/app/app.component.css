@@ -219,3 +219,8 @@ label.hamburger>i:after {
   margin: auto;
   padding-bottom: 3rem;
 }
+
+footer{
+  max-width: 1000px;
+  margin: auto;
+}

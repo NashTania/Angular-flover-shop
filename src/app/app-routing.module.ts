@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'detail/:id', component: ProductDetailComponent },
   { path: 'add-product', component: AddProductComponent }
 
-]
+];
 
 @NgModule({
   imports: [

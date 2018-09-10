@@ -12,9 +12,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FilterPipe } from './filter.pipe';
 import { AddProductComponent } from './add-product/add-product.component';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 
 
 @NgModule({
@@ -27,15 +28,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     CartComponent,
     ProductDetailComponent,
     FilterPipe,
-    AddProductComponent
+    AddProductComponent,
   ],
-
   imports: [
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

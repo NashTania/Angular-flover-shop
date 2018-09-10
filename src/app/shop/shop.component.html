@@ -7,7 +7,6 @@
     <p class='heading'>
       Фильтр
     </p>
-    <!--[ngModel]='checkType'  (change)='checkType($event, bouquet)' -->
     <form [formGroup]='typesForm'>
       <input type="checkbox" #bouquet value="bouquet" formControlName='bouquet' (change)='addType($event, bouquet)'/>
       <label for='bouquet' ><span>букеты</span></label><br />
@@ -21,23 +20,10 @@
       <input type="checkbox" #decor value="decor" formControlName='decor'(change)='addType($event, decor)'/>
       <label for='decor'><span>цветочный декор</span></label>
     </form>
-    <!--<form #typesForm='ngForm'>
-      <input type="checkbox" value="bouquet" name='bouquet' [ngModel]='type.bouquet' id='bouquet' (change)='checkType(typesForm)'/>
-      <label for='bouquet' ><span>букеты</span></label><br />
-
-      <input type="checkbox" #wedding value="wedding" name='wedding' [ngModel]='type.wedding' (change)='addType(typesForm)'/>
-      <label for='wedding' ><span>букеты для невест</span></label><br />
-
-      <input type="checkbox" #box value="box" (change)='addType($event, box)'/>
-      <label for='box'><span>букеты в коробке</span></label><br />
-
-      <input type="checkbox" #decor value="decor"(change)='addType($event, decor)'/>
-      <label for='decor'><span>цветочный декор</span></label>
-    </form>-->
   </div>
 
   <div class='flex-container' id='flex-container'>
-    <div *ngFor='let product of products | filter: type' class='card-popular'>
+    <div *ngFor='let product of products | filter: _type' class='card-popular'>
       <a routerLink="/detail/{{product.id}}">
       <img src='assets/images/{{product.src}}' />
       </a>
