@@ -18,5 +18,5 @@ export class FilterPipe implements PipeTransform {
     } else {
       return products.filter(product => types.indexOf(product.type) !== -1);
     }
-  }
+  }     
 }

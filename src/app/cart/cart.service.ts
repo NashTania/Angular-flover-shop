@@ -4,6 +4,10 @@ import { Product } from '../product';
 import { Headers, RequestOptions, RequestMethod } from '@angular/http';
 import { ShopService } from '../shop/shop.service';
 
+type ResultWithProduct = {
+  result: string
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -31,10 +35,11 @@ export class CartService {
     body.set('f', 'READ');
     body.set('n', 'tatiana_tkachenko_FD2_flover_cart_products_' + this.userId);
     if (this._dataPromise === undefined) {
-     return this._dataPromise = this.http.post<Product>(this.productUrl, body.toString(), this.options).toPromise()
-        .then((data, error) => {
-        return this._data = JSON.parse(data.result);
-      });
+     return this._dataPromise = this.http.post<ResultWithProduct>(this.productUrl, body.toString(), this.options).toPromise()
+        .then((data) => {
+          return this._data = JSON.parse(data.result);
+        }
+      );
     }
     return this._dataPromise;
   }

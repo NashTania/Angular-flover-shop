@@ -68,9 +68,9 @@ export class AddProductComponent implements OnInit {
   }
 
   onSubmit() {
-    this.shopService.getProduct().toPromise()
+    this.shopService.loadList().toPromise()
       .then((data) => {
-        this.products = JSON.parse(data.result);
+        this.products = data;
         this.products.push(this.addProductForm.value);
         alert('товар добавлен');
         this.addProductForm.reset();
